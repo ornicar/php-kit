@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta charset="utf-8"/>
+    <title>API Documentation</title>
+    <meta name="author" content=""/>
+    <meta name="description" content=""/>
+
+    <link href="../css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/prism.css" rel="stylesheet" media="all"/>
+    <link href="../css/template.css" rel="stylesheet" media="all"/>
+    
+    <!--[if lt IE 9]>
+    <script src="../js/html5.js"></script>
+    <![endif]-->
+    <script src="../js/jquery-1.11.0.min.js"></script>
+    <script src="../js/ui/1.10.4/jquery-ui.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jquery.smooth-scroll.js"></script>
+    <script src="../js/prism.min.js"></script>
+    <!-- TODO: Add http://jscrollpane.kelvinluck.com/ to style the scrollbars for browsers not using webkit-->
+    <script type="text/javascript">
+    function loadExternalCodeSnippets() {
+        Array.prototype.slice.call(document.querySelectorAll('pre[data-src]')).forEach(function (pre) {
+            var src = pre.getAttribute('data-src');
+            var extension = (src.match(/\.(\w+)$/) || [, ''])[1];
+            var language = 'php';
+
+            var code = document.createElement('code');
+            code.className = 'language-' + language;
+
+            pre.textContent = '';
+
+            code.textContent = 'Loading…';
+
+            pre.appendChild(code);
+
+            var xhr = new XMLHttpRequest();
+
+            xhr.open('GET', src, true);
+
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4) {
+
+                    if (xhr.status < 400 && xhr.responseText) {
+                        code.textContent = xhr.responseText;
+
+                        Prism.highlightElement(code);
+                    }
+                    else if (xhr.status >= 400) {
+                        code.textContent = '✖ Error ' + xhr.status + ' while fetching file: ' + xhr.statusText;
+                    }
+                    else {
+                        code.textContent = '✖ Error: File does not exist or is empty';
+                    }
+                }
+            };
+
+            xhr.send(null);
+        });
+    }
+
+    $(document).ready(function(){
+        loadExternalCodeSnippets();
+    });
+    $('#source-view').on('shown', function () {
+        loadExternalCodeSnippets();
+    })
+</script>
+
+    <link rel="shortcut icon" href="../images/favicon.ico"/>
+    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
+    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
+    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+</head>
+<body>
+
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <i class="icon-ellipsis-vertical"></i>
+            </a>
+            <a class="brand" href="../index.html">API Documentation</a>
+
+            <div class="nav-collapse">
+                <ul class="nav pull-right">
+                                        <li class="dropdown">
+                        <a href="../index.html" class="dropdown-toggle" data-toggle="dropdown">
+                            API Documentation <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                                                        <li><a href="../namespaces/Prismic.html">\Prismic</a></li>
+                                                    </ul>
+                    </li>
+                                        <li class="dropdown" id="charts-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Charts <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../graphs/class.html">
+                                    <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown" id="reports-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Reports <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../reports/errors.html">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <i class="icon-list-alt"></i>&#160;Errors <span class="label label-info pull-right">14</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../reports/markers.html">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <i class="icon-list-alt"></i>&#160;Markers <span class="label label-info pull-right">72</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../reports/deprecated.html">
+                                                                                                                                                                                                                                                                    <i class="icon-list-alt"></i>&#160;Deprecated <span class="label label-info pull-right">2</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--<div class="go_to_top">-->
+    <!--<a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>-->
+    <!--</div>-->
+</div>
+
+<div id="___" class="container-fluid">
+        <section class="row-fluid">
+        <div class="span2 sidebar">
+                                <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-1119098014"></a>
+                                <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
+            </div>
+            <div id="namespace-1119098014" class="accordion-body collapse in">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-547234898"></a>
+                                <a href="../namespaces/Prismic.html" style="margin-left: 30px; padding-left: 0">Prismic</a>
+            </div>
+            <div id="namespace-547234898" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-2015376004"></a>
+                                <a href="../namespaces/Prismic.Cache.html" style="margin-left: 30px; padding-left: 0">Cache</a>
+            </div>
+            <div id="namespace-2015376004" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                    <li class="interface"><a href="../classes/Prismic.Cache.CacheInterface.html">CacheInterface</a></li>
+                                                                                                    <li class="class"><a href="../classes/Prismic.Cache.DefaultCache.html">DefaultCache</a></li>
+                                                    <li class="class"><a href="../classes/Prismic.Cache.NoCache.html">NoCache</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-39300653"></a>
+                                <a href="../namespaces/Prismic.Fragment.html" style="margin-left: 30px; padding-left: 0">Fragment</a>
+            </div>
+            <div id="namespace-39300653" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-707540192"></a>
+                                <a href="../namespaces/Prismic.Fragment.Block.html" style="margin-left: 30px; padding-left: 0">Block</a>
+            </div>
+            <div id="namespace-707540192" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                    <li class="interface"><a href="../classes/Prismic.Fragment.Block.BlockInterface.html">BlockInterface</a></li>
+                                                    <li class="interface"><a href="../classes/Prismic.Fragment.Block.TextInterface.html">TextInterface</a></li>
+                                                                                                    <li class="class"><a href="../classes/Prismic.Fragment.Block.EmbedBlock.html">EmbedBlock</a></li>
+                                                    <li class="class"><a href="../classes/Prismic.Fragment.Block.HeadingBlock.html">HeadingBlock</a></li>
+                                                    <li class="class"><a href="../classes/Prismic.Fragment.Block.ImageBlock.html">ImageBlock</a></li>
+                                                    <li class="class"><a href="../classes/Prismic.Fragment.Block.ListItemBlock.html">ListItemBlock</a></li>
+                                                    <li class="class"><a href="../classes/Prismic.Fragment.Block.ParagraphBlock.html">ParagraphBlock</a></li>
+                                                    <li class="class"><a href="../classes/Prismic.Fragment.Block.PreformattedBlock.html">PreformattedBlock</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-62465408"></a>
+                                <a href="../namespaces/Prismic.Fragment.Link.html" style="margin-left: 30px; padding-left: 0">Link</a>
+            </div>
+            <div id="namespace-62465408" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                    <li class="interface"><a href="../classes/Prismic.Fragment.Link.LinkInterface.html">LinkInterface</a></li>
+                                                                                                    <li class="class"><a href="../classes/Prismic.Fragment.Link.DocumentLink.html">DocumentLink</a></li>
+                                                    <li class="class"><a href="../classes/Prismic.Fragment.Link.FileLink.html">FileLink</a></li>
+                                                    <li class="class"><a href="../classes/Prismic.Fragment.Link.ImageLink.html">ImageLink</a></li>
+                                                    <li class="class"><a href="../classes/Prismic.Fragment.Link.WebLink.html">WebLink</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1337320484"></a>
+                                <a href="../namespaces/Prismic.Fragment.Span.html" style="margin-left: 30px; padding-left: 0">Span</a>
+            </div>
+            <div id="namespace-1337320484" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                    <li class="interface"><a href="../classes/Prismic.Fragment.Span.SpanInterface.html">SpanInterface</a></li>
+                                                                                                    <li class="class"><a href="../classes/Prismic.Fragment.Span.EmSpan.html">EmSpan</a></li>
+                                                    <li class="class"><a href="../classes/Prismic.Fragment.Span.HyperlinkSpan.html">HyperlinkSpan</a></li>
+                                                    <li class="class"><a href="../classes/Prismic.Fragment.Span.StrongSpan.html">StrongSpan</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                    <li class="interface"><a href="../classes/Prismic.Fragment.FragmentInterface.html">FragmentInterface</a></li>
+                                                                                                    <li class="class"><a href="../classes/Prismic.Fragment.BlockGroup.html">BlockGroup</a></li>
+                                                    <li class="class"><a href="../classes/Prismic.Fragment.Color.html">Color</a></li>
+                                                    <li class="class"><a href="../classes/Prismic.Fragment.Date.html">Date</a></li>
+                                                    <li class="class"><a href="../classes/Prismic.Fragment.Embed.html">Embed</a></li>
+                                                    <li class="class"><a href="../classes/Prismic.Fragment.GeoPoint.html">GeoPoint</a></li>
+                                                    <li class="class"><a href="../classes/Prismic.Fragment.Group.html">Group</a></li>
+                                                    <li class="class"><a href="../classes/Prismic.Fragment.Image.html">Image</a></li>
+                                                    <li class="class"><a href="../classes/Prismic.Fragment.ImageView.html">ImageView</a></li>
+                                                    <li class="class"><a href="../classes/Prismic.Fragment.Number.html">Number</a></li>
+                                                    <li class="class"><a href="../classes/Prismic.Fragment.ParsedText.html">ParsedText</a></li>
+                                                    <li class="class"><a href="../classes/Prismic.Fragment.StructuredText.html">StructuredText</a></li>
+                                                    <li class="class"><a href="../classes/Prismic.Fragment.Text.html">Text</a></li>
+                                                    <li class="class"><a href="../classes/Prismic.Fragment.Timestamp.html">Timestamp</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Prismic.Api.html">Api</a></li>
+                                                    <li class="class"><a href="../classes/Prismic.ApiData.html">ApiData</a></li>
+                                                    <li class="class"><a href="../classes/Prismic.Document.html">Document</a></li>
+                                                    <li class="class"><a href="../classes/Prismic.FieldForm.html">FieldForm</a></li>
+                                                    <li class="class"><a href="../classes/Prismic.Form.html">Form</a></li>
+                                                    <li class="class"><a href="../classes/Prismic.LinkedDocument.html">LinkedDocument</a></li>
+                                                    <li class="class"><a href="../classes/Prismic.LinkResolver.html">LinkResolver</a></li>
+                                                    <li class="class"><a href="../classes/Prismic.Ref.html">Ref</a></li>
+                                                    <li class="class"><a href="../classes/Prismic.Response.html">Response</a></li>
+                                                    <li class="class"><a href="../classes/Prismic.SearchForm.html">SearchForm</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        </div>
+    </section>
+    <section class="row-fluid">
+        <div class="span10 offset2">
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <nav>
+                                                <a href="../namespaces/Prismic.Fragment.Link.html">\Prismic\Fragment\Link</a> <i class="icon-level-up"></i>
+                                            </nav>
+                    <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal"><i class="icon-code"></i></a>
+
+                    <h1><small>\Prismic\Fragment\Link</small>DocumentLink</h1>
+                    <p><em>This class embodies a document link; it is what is retrieved from the API when
+a link is created towards another document in the repository.</em></p>
+                    <p>Do note that in those cases, you do not retrieve all of the linked documents,
+but only enough information to build your link to the document. For this reason,
+this is also the class of the object passed in the linkResolver function.
+LinkInterface objects can be found in two occasions: as the "$link" variable of a HyperlinkSpan object
+(which happens when the link is a hyperlink in a StructuredText fragment), or the LinkInterface
+can also be its own fragment (e.g. for a "related" fragment, that links to a related document).</p>
+                    
+                                        
+                    <section id="summary">
+                        <h2>Summary</h2>
+                        <section class="row-fluid heading">
+                            <section class="span4">
+                                <a href="#methods">Methods</a>
+                            </section>
+                            <section class="span4">
+                                <a href="#properties">Properties</a>
+                            </section>
+                            <section class="span4">
+                                <a href="#constants">Constants</a>
+                            </section>
+                        </section>
+                        <section class="row-fluid public">
+                            <section class="span4">
+                                                                    <a href="../classes/Prismic.Fragment.Link.DocumentLink.html#method___construct" class="">__construct()</a><br />
+                                                                    <a href="../classes/Prismic.Fragment.Link.DocumentLink.html#method_asHtml" class="">asHtml()</a><br />
+                                                                    <a href="../classes/Prismic.Fragment.Link.DocumentLink.html#method_parse" class="">parse()</a><br />
+                                                                    <a href="../classes/Prismic.Fragment.Link.DocumentLink.html#method_getUrl" class="">getUrl()</a><br />
+                                                                    <a href="../classes/Prismic.Fragment.Link.DocumentLink.html#method_getId" class="">getId()</a><br />
+                                                                    <a href="../classes/Prismic.Fragment.Link.DocumentLink.html#method_asText" class="">asText()</a><br />
+                                                                    <a href="../classes/Prismic.Fragment.Link.DocumentLink.html#method_getType" class="">getType()</a><br />
+                                                                    <a href="../classes/Prismic.Fragment.Link.DocumentLink.html#method_getTags" class="">getTags()</a><br />
+                                                                    <a href="../classes/Prismic.Fragment.Link.DocumentLink.html#method_getSlug" class="">getSlug()</a><br />
+                                                                    <a href="../classes/Prismic.Fragment.Link.DocumentLink.html#method_isBroken" class="">isBroken()</a><br />
+                                                            </section>
+                            <section class="span4">
+                                                                    <em>No public properties found</em>
+                                                            </section>
+                            <section class="span4">
+                                                                    <em>No constants found</em>
+                                                            </section>
+                        </section>
+                        <section class="row-fluid protected">
+                            <section class="span4">
+                                                                    <em>No protected methods found</em>
+                                                            </section>
+                            <section class="span4">
+                                                                    <em>No protected properties found</em>
+                                                            </section>
+                            <section class="span4">
+                                <em>N/A</em>
+                            </section>
+                        </section>
+                        <section class="row-fluid private">
+                            <section class="span4">
+                                                                    <em>No private methods found</em>
+                                                            </section>
+                            <section class="span4">
+                                                                    <a href="../classes/Prismic.Fragment.Link.DocumentLink.html#property_id" class="">$id</a><br />
+                                                                    <a href="../classes/Prismic.Fragment.Link.DocumentLink.html#property_type" class="">$type</a><br />
+                                                                    <a href="../classes/Prismic.Fragment.Link.DocumentLink.html#property_tags" class="">$tags</a><br />
+                                                                    <a href="../classes/Prismic.Fragment.Link.DocumentLink.html#property_slug" class="">$slug</a><br />
+                                                                    <a href="../classes/Prismic.Fragment.Link.DocumentLink.html#property_isBroken" class="">$isBroken</a><br />
+                                                            </section>
+                            <section class="span4">
+                                <em>N/A</em>
+                            </section>
+                        </section>
+                    </section>
+                </div>
+                <aside class="span4 detailsbar">
+                                        
+                    
+                    <dl>
+                        <dt>File</dt>
+                            <dd><a href="../files/Fragment.Link.DocumentLink.html"><div class="path-wrapper">Fragment/Link/DocumentLink.php</div></a></dd>
+                                                <dt>Package</dt>
+                            <dd><div class="namespace-wrapper">Default</div></dd>
+                                                <dt>Class hierarchy</dt>
+                            <dd class="hierarchy">
+                                                                                                                                                                    <div class="namespace-wrapper">\Prismic\Fragment\Link\DocumentLink</div>
+                            </dd>
+
+                                                                            <dt>Implements</dt>
+                                                        <dd><a href="../classes/Prismic.Fragment.Link.LinkInterface.html"><div class="namespace-wrapper">\Prismic\Fragment\Link\LinkInterface</div></a></dd>
+                        
+                        
+                        
+                        
+                                                                        </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">
+                                            <tr><td colspan="2"><em>None found</em></td></tr>
+                                        </table>
+                </aside>
+            </div>
+
+                        
+                                    <a id="properties" name="properties"></a>
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <h2>Properties</h2>
+                </div>
+                <aside class="span4 detailsbar"></aside>
+            </div>
+
+                                                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_id" name="property_id" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$id</h3>
+                <pre class="signature">$id : string</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                string
+                &mdash; the ID of the linked document                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_type" name="property_type" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$type</h3>
+                <pre class="signature">$type : string</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                string
+                &mdash; the type of the linked document                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_tags" name="property_tags" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$tags</h3>
+                <pre class="signature">$tags : array</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                array
+                &mdash; an array of strings which are the document&#039;s tags                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_slug" name="property_slug" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$slug</h3>
+                <pre class="signature">$slug : string</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                string
+                &mdash; the current slug of the document                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_isBroken" name="property_isBroken" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$isBroken</h3>
+                <pre class="signature">$isBroken : boolean</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                boolean
+                &mdash; returns true if the link is towards a document that is not live, for instance                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                            
+                                    <a id="methods" name="methods"></a>
+            <div class="row-fluid">
+                <div class="span8 content class"><h2>Methods</h2></div>
+                <aside class="span4 detailsbar"></aside>
+            </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method___construct" name="method___construct" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">__construct()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">__construct(string  <span class="argument">$id</span>, string  <span class="argument">$type</span>, array  <span class="argument">$tags</span>, string  <span class="argument">$slug</span>, boolean  <span class="argument">$isBroken</span>) </pre>
+                <p><em>Constructs a document link.</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$id </td>
+                                <td><p>the ID of the linked document</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$type </td>
+                                <td><p>the type of the linked document</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>array</td>
+                                <td>$tags </td>
+                                <td><p>an array of strings which are the document's tags</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$slug </td>
+                                <td><p>the current slug of the document</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$isBroken </td>
+                                <td><p>returns true if the link is towards a document that is not live, for instance</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_asHtml" name="method_asHtml" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">asHtml()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">asHtml(\Prismic\LinkResolver  <span class="argument">$linkResolver</span>) : string</pre>
+                <p><em>Builds an HTML version of the raw link, pointing to the right URL,
+and with the document&#039;s slug as the hypertext.</em></p>
+                <p>If you want to use one of the document's fragments as the hypertext,
+you will need to query the document in your controller.</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td><a href="../classes/Prismic.LinkResolver.html">\Prismic\LinkResolver</a></td>
+                                <td>$linkResolver </td>
+                                <td><p>the link resolver</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    string
+                                            &mdash; <p>the HTML version of the link</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            api
+                        </th>
+                        <td>
+                                                                                            
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_parse" name="method_parse" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">parse()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">parse(\stdClass  <span class="argument">$json</span>) : \Prismic\Fragment\Link\DocumentLink</pre>
+                <p><em>Parses a proper bit of unmarshaled JSON into a DocumentLink object.</em></p>
+                <p>This is used internally during the unmarshaling of API calls.</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>\stdClass</td>
+                                <td>$json </td>
+                                <td><p>the raw JSON that needs to be transformed into native objects.</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/Prismic.Fragment.Link.DocumentLink.html">\Prismic\Fragment\Link\DocumentLink</a>
+                                            &mdash; <p>the new object that was created form the JSON.</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                            <span class="label label-info">static</span>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getUrl" name="method_getUrl" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getUrl()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getUrl(\Prismic\LinkResolver  <span class="argument">$linkResolver = null</span>) : string</pre>
+                <p><em>Returns the URL of the document we&#039;re linking to.</em></p>
+                <p>The linkResolver will be needed in this case, as we're linking to a document link,
+which should be a URL of your website.
+Read more about the link resolver at the very end of prismic.io's documentation.</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td><a href="../classes/Prismic.LinkResolver.html">\Prismic\LinkResolver</a></td>
+                                <td>$linkResolver </td>
+                                <td><p>the link resolver (read prismic.io's API documentation to learn more)</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    string
+                                            &mdash; <p>the URL of the resource we're linking to online</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            api
+                        </th>
+                        <td>
+                                                                                            
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getId" name="method_getId" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getId()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getId() : string</pre>
+                <p><em>Returns the ID of the linked document.</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    string
+                                            &mdash; <p>the ID of the linked document</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            api
+                        </th>
+                        <td>
+                                                                                            
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_asText" name="method_asText" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">asText()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">asText() : string</pre>
+                <p><em>Builds an unformatted text version of the raw link: simply, the document&#039;s ID.</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    string
+                                            &mdash; <p>an unformatted text version of the raw link</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            api
+                        </th>
+                        <td>
+                                                                                            
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getType" name="method_getType" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getType()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getType() : string</pre>
+                <p><em>Returns the type of the linked document</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    string
+                                            &mdash; <p>the type of the linked document</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            api
+                        </th>
+                        <td>
+                                                                                            
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getTags" name="method_getTags" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getTags()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getTags() : array</pre>
+                <p><em>Returns an array of strings which are the document&#039;s tags</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    array
+                                            &mdash; <p>an array of strings which are the document's tags</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            api
+                        </th>
+                        <td>
+                                                                                            
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getSlug" name="method_getSlug" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getSlug()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getSlug() : string</pre>
+                <p><em>Returns the current slug of the document</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    string
+                                            &mdash; <p>the current slug of the document</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            api
+                        </th>
+                        <td>
+                                                                                            
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_isBroken" name="method_isBroken" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">isBroken()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">isBroken() : boolean</pre>
+                <p><em>Checks if the link is broken (towards a document that is not live, for instance)</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    boolean
+                                            &mdash; <p>true if the link is towards a document that is not live, for instance</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            api
+                        </th>
+                        <td>
+                                                                                            
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                                                    </div>
+    </section>
+
+    <div id="source-view" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="source-view-label" aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="source-view-label">DocumentLink.php</h3>
+        </div>
+        <div class="modal-body">
+            <pre data-src="../files/Fragment/Link/DocumentLink.php.txt" class="language-php line-numbers"></pre>
+        </div>
+    </div>
+
+    <footer class="row-fluid">
+        <section class="span10 offset2">
+            <section class="row-fluid">
+                <section class="span10 offset1">
+                    <section class="row-fluid footer-sections">
+                        <section class="span4">
+                                                        <h1><i class="icon-code"></i></h1>
+                            <div>
+                                <ul>
+                                                                            <li><a href="../namespaces/Prismic.html">\Prismic</a></li>
+                                                                    </ul>
+                            </div>
+                        </section>
+                        <section class="span4">
+                                                        <h1><i class="icon-bar-chart"></i></h1>
+                            <div>
+                                <ul>
+                                    <li><a href="../graphs/class.html">Class Hierarchy Diagram</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                        <section class="span4">
+                                                        <h1><i class="icon-pushpin"></i></h1>
+                            <div>
+                                <ul>
+                                    <li><a href="../reports/errors.html">Errors</a></li>
+                                    <li><a href="../reports/markers.html">Markers</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                    </section>
+                </section>
+            </section>
+            <section class="row-fluid">
+                <section class="span10 offset1">
+                    <hr />
+                    Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
+                    on 
+Warning: date_default_timezone_get(): It is not safe to rely on the system's timezone settings. You are *required* to use the date.timezone setting or the date_default_timezone_set() function. In case you used any of those methods and you are still getting this warning, you most likely misspelled the timezone identifier. We selected the timezone 'UTC' for now, but please set date.timezone to select your timezone. in /Volumes/Devdisk/Prismic/php-kit/vendor/twig/twig/lib/Twig/Extension/Core.php on line 89
+September 24th, 2014 at 13:22.
+                </section>
+            </section>
+        </section>
+    </footer>
+</div>
+
+</body>
+</html>

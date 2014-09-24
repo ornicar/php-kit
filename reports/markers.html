@@ -1,0 +1,1314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta charset="utf-8"/>
+    <title>     &raquo; Markers
+</title>
+    <meta name="author" content=""/>
+    <meta name="description" content=""/>
+
+    <link href="../css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/prism.css" rel="stylesheet" media="all"/>
+    <link href="../css/template.css" rel="stylesheet" media="all"/>
+    
+    <!--[if lt IE 9]>
+    <script src="../js/html5.js"></script>
+    <![endif]-->
+    <script src="../js/jquery-1.11.0.min.js"></script>
+    <script src="../js/ui/1.10.4/jquery-ui.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jquery.smooth-scroll.js"></script>
+    <script src="../js/prism.min.js"></script>
+    <!-- TODO: Add http://jscrollpane.kelvinluck.com/ to style the scrollbars for browsers not using webkit-->
+    
+    <link rel="shortcut icon" href="../images/favicon.ico"/>
+    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
+    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
+    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+</head>
+<body>
+
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <i class="icon-ellipsis-vertical"></i>
+            </a>
+            <a class="brand" href="../index.html">API Documentation</a>
+
+            <div class="nav-collapse">
+                <ul class="nav pull-right">
+                                        <li class="dropdown">
+                        <a href="../index.html" class="dropdown-toggle" data-toggle="dropdown">
+                            API Documentation <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                                                        <li><a href="../namespaces/Prismic.html">\Prismic</a></li>
+                                                    </ul>
+                    </li>
+                                        <li class="dropdown" id="charts-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Charts <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../graphs/class.html">
+                                    <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown" id="reports-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Reports <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../reports/errors.html">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <i class="icon-list-alt"></i>&#160;Errors <span class="label label-info pull-right">14</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../reports/markers.html">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <i class="icon-list-alt"></i>&#160;Markers <span class="label label-info pull-right">72</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../reports/deprecated.html">
+                                                                                                                                                                                                                                                                    <i class="icon-list-alt"></i>&#160;Deprecated <span class="label label-info pull-right">2</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--<div class="go_to_top">-->
+    <!--<a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>-->
+    <!--</div>-->
+</div>
+
+<div id="___" class="container-fluid">
+        <section class="row-fluid">
+        <div class="span2 sidebar">
+            <ul class="side-nav nav nav-list">
+                <li class="nav-header">Navigation</li>
+                                                                        <li><a href="#Api.php"><i class="icon-file"></i> Api.php</a></li>
+                                                                                                <li><a href="#ApiData.php"><i class="icon-file"></i> ApiData.php</a></li>
+                                                                                                <li><a href="#Cache/CacheInterface.php"><i class="icon-file"></i> Cache/CacheInterface.php</a></li>
+                                                                                                <li><a href="#Cache/DefaultCache.php"><i class="icon-file"></i> Cache/DefaultCache.php</a></li>
+                                                                                                <li><a href="#Cache/NoCache.php"><i class="icon-file"></i> Cache/NoCache.php</a></li>
+                                                                                                <li><a href="#Document.php"><i class="icon-file"></i> Document.php</a></li>
+                                                                                                <li><a href="#FieldForm.php"><i class="icon-file"></i> FieldForm.php</a></li>
+                                                                                                <li><a href="#Form.php"><i class="icon-file"></i> Form.php</a></li>
+                                                                                                <li><a href="#Fragment/Block/BlockInterface.php"><i class="icon-file"></i> Fragment/Block/BlockInterface.php</a></li>
+                                                                                                <li><a href="#Fragment/Block/EmbedBlock.php"><i class="icon-file"></i> Fragment/Block/EmbedBlock.php</a></li>
+                                                                                                <li><a href="#Fragment/Block/HeadingBlock.php"><i class="icon-file"></i> Fragment/Block/HeadingBlock.php</a></li>
+                                                                                                <li><a href="#Fragment/Block/ImageBlock.php"><i class="icon-file"></i> Fragment/Block/ImageBlock.php</a></li>
+                                                                                                <li><a href="#Fragment/Block/ListItemBlock.php"><i class="icon-file"></i> Fragment/Block/ListItemBlock.php</a></li>
+                                                                                                <li><a href="#Fragment/Block/ParagraphBlock.php"><i class="icon-file"></i> Fragment/Block/ParagraphBlock.php</a></li>
+                                                                                                <li><a href="#Fragment/Block/PreformattedBlock.php"><i class="icon-file"></i> Fragment/Block/PreformattedBlock.php</a></li>
+                                                                                                <li><a href="#Fragment/Block/TextInterface.php"><i class="icon-file"></i> Fragment/Block/TextInterface.php</a></li>
+                                                                                                <li><a href="#Fragment/BlockGroup.php"><i class="icon-file"></i> Fragment/BlockGroup.php</a></li>
+                                                                                                <li><a href="#Fragment/Color.php"><i class="icon-file"></i> Fragment/Color.php</a></li>
+                                                                                                <li><a href="#Fragment/Date.php"><i class="icon-file"></i> Fragment/Date.php</a></li>
+                                                                                                <li><a href="#Fragment/Embed.php"><i class="icon-file"></i> Fragment/Embed.php</a></li>
+                                                                                                <li><a href="#Fragment/FragmentInterface.php"><i class="icon-file"></i> Fragment/FragmentInterface.php</a></li>
+                                                                                                <li><a href="#Fragment/GeoPoint.php"><i class="icon-file"></i> Fragment/GeoPoint.php</a></li>
+                                                                                                <li><a href="#Fragment/Group.php"><i class="icon-file"></i> Fragment/Group.php</a></li>
+                                                                                                <li><a href="#Fragment/Image.php"><i class="icon-file"></i> Fragment/Image.php</a></li>
+                                                                                                <li><a href="#Fragment/ImageView.php"><i class="icon-file"></i> Fragment/ImageView.php</a></li>
+                                                                                                <li><a href="#Fragment/Link/DocumentLink.php"><i class="icon-file"></i> Fragment/Link/DocumentLink.php</a></li>
+                                                                                                <li><a href="#Fragment/Link/FileLink.php"><i class="icon-file"></i> Fragment/Link/FileLink.php</a></li>
+                                                                                                <li><a href="#Fragment/Link/ImageLink.php"><i class="icon-file"></i> Fragment/Link/ImageLink.php</a></li>
+                                                                                                <li><a href="#Fragment/Link/LinkInterface.php"><i class="icon-file"></i> Fragment/Link/LinkInterface.php</a></li>
+                                                                                                <li><a href="#Fragment/Link/WebLink.php"><i class="icon-file"></i> Fragment/Link/WebLink.php</a></li>
+                                                                                                <li><a href="#Fragment/Number.php"><i class="icon-file"></i> Fragment/Number.php</a></li>
+                                                                                                <li><a href="#Fragment/ParsedText.php"><i class="icon-file"></i> Fragment/ParsedText.php</a></li>
+                                                                                                <li><a href="#Fragment/Span/EmSpan.php"><i class="icon-file"></i> Fragment/Span/EmSpan.php</a></li>
+                                                                                                <li><a href="#Fragment/Span/HyperlinkSpan.php"><i class="icon-file"></i> Fragment/Span/HyperlinkSpan.php</a></li>
+                                                                                                <li><a href="#Fragment/Span/SpanInterface.php"><i class="icon-file"></i> Fragment/Span/SpanInterface.php</a></li>
+                                                                                                <li><a href="#Fragment/Span/StrongSpan.php"><i class="icon-file"></i> Fragment/Span/StrongSpan.php</a></li>
+                                                                                                <li><a href="#Fragment/StructuredText.php"><i class="icon-file"></i> Fragment/StructuredText.php</a></li>
+                                                                                                <li><a href="#Fragment/Text.php"><i class="icon-file"></i> Fragment/Text.php</a></li>
+                                                                                                <li><a href="#Fragment/Timestamp.php"><i class="icon-file"></i> Fragment/Timestamp.php</a></li>
+                                                                                                <li><a href="#LinkResolver.php"><i class="icon-file"></i> LinkResolver.php</a></li>
+                                                                                                <li><a href="#LinkedDocument.php"><i class="icon-file"></i> LinkedDocument.php</a></li>
+                                                                                                <li><a href="#Ref.php"><i class="icon-file"></i> Ref.php</a></li>
+                                                                                                <li><a href="#Response.php"><i class="icon-file"></i> Response.php</a></li>
+                                                                                                <li><a href="#SearchForm.php"><i class="icon-file"></i> SearchForm.php</a></li>
+                                                                    </ul>
+        </div>
+
+        <div class="span10 offset2">
+
+            <ul class="breadcrumb">
+                <li><a href="../"><i class="icon-map-marker"></i></a><span class="divider">\</span></li>
+                <li>Markers</li>
+            </ul>
+
+            
+            <div id="marker-accordion">
+                                                            <div class="package-contents">
+                            <a name="Api.php" id="Api.php"></a>
+                            <h3>
+                            <i class="icon-file"></i>
+                                Api.php
+                                <small style="float: right;padding-right: 10px;">3</small>
+                            </h3>
+                            <div>
+                                <table class="table markers table-bordered">
+                                    <tr>
+                                        <th>Type</th>
+                                        <th>Line</th>
+                                        <th>Description</th>
+                                    </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>5</td>
+                                            <td>www.zengularity.com).</td>
+                                        </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>21</td>
+                                            <td>github.com/prismicio/php-kit&quot;&gt;the kit&#039;s README file&lt;/a&gt;)</td>
+                                        </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>235</td>
+                                            <td>idofyourrepository.prismic.io/api&#039;)</td>
+                                        </tr>
+                                                                    </table>
+                            </div>
+                        </div>
+                                                                                <div class="package-contents">
+                            <a name="ApiData.php" id="ApiData.php"></a>
+                            <h3>
+                            <i class="icon-file"></i>
+                                ApiData.php
+                                <small style="float: right;padding-right: 10px;">1</small>
+                            </h3>
+                            <div>
+                                <table class="table markers table-bordered">
+                                    <tr>
+                                        <th>Type</th>
+                                        <th>Line</th>
+                                        <th>Description</th>
+                                    </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>5</td>
+                                            <td>www.zengularity.com).</td>
+                                        </tr>
+                                                                    </table>
+                            </div>
+                        </div>
+                                                                                <div class="package-contents">
+                            <a name="Cache/CacheInterface.php" id="Cache/CacheInterface.php"></a>
+                            <h3>
+                            <i class="icon-file"></i>
+                                Cache/CacheInterface.php
+                                <small style="float: right;padding-right: 10px;">1</small>
+                            </h3>
+                            <div>
+                                <table class="table markers table-bordered">
+                                    <tr>
+                                        <th>Type</th>
+                                        <th>Line</th>
+                                        <th>Description</th>
+                                    </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>5</td>
+                                            <td>www.zengularity.com).</td>
+                                        </tr>
+                                                                    </table>
+                            </div>
+                        </div>
+                                                                                <div class="package-contents">
+                            <a name="Cache/DefaultCache.php" id="Cache/DefaultCache.php"></a>
+                            <h3>
+                            <i class="icon-file"></i>
+                                Cache/DefaultCache.php
+                                <small style="float: right;padding-right: 10px;">1</small>
+                            </h3>
+                            <div>
+                                <table class="table markers table-bordered">
+                                    <tr>
+                                        <th>Type</th>
+                                        <th>Line</th>
+                                        <th>Description</th>
+                                    </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>5</td>
+                                            <td>www.zengularity.com).</td>
+                                        </tr>
+                                                                    </table>
+                            </div>
+                        </div>
+                                                                                <div class="package-contents">
+                            <a name="Cache/NoCache.php" id="Cache/NoCache.php"></a>
+                            <h3>
+                            <i class="icon-file"></i>
+                                Cache/NoCache.php
+                                <small style="float: right;padding-right: 10px;">1</small>
+                            </h3>
+                            <div>
+                                <table class="table markers table-bordered">
+                                    <tr>
+                                        <th>Type</th>
+                                        <th>Line</th>
+                                        <th>Description</th>
+                                    </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>5</td>
+                                            <td>www.zengularity.com).</td>
+                                        </tr>
+                                                                    </table>
+                            </div>
+                        </div>
+                                                                                <div class="package-contents">
+                            <a name="Document.php" id="Document.php"></a>
+                            <h3>
+                            <i class="icon-file"></i>
+                                Document.php
+                                <small style="float: right;padding-right: 10px;">1</small>
+                            </h3>
+                            <div>
+                                <table class="table markers table-bordered">
+                                    <tr>
+                                        <th>Type</th>
+                                        <th>Line</th>
+                                        <th>Description</th>
+                                    </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>5</td>
+                                            <td>www.zengularity.com).</td>
+                                        </tr>
+                                                                    </table>
+                            </div>
+                        </div>
+                                                                                <div class="package-contents">
+                            <a name="FieldForm.php" id="FieldForm.php"></a>
+                            <h3>
+                            <i class="icon-file"></i>
+                                FieldForm.php
+                                <small style="float: right;padding-right: 10px;">1</small>
+                            </h3>
+                            <div>
+                                <table class="table markers table-bordered">
+                                    <tr>
+                                        <th>Type</th>
+                                        <th>Line</th>
+                                        <th>Description</th>
+                                    </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>5</td>
+                                            <td>www.zengularity.com).</td>
+                                        </tr>
+                                                                    </table>
+                            </div>
+                        </div>
+                                                                                <div class="package-contents">
+                            <a name="Form.php" id="Form.php"></a>
+                            <h3>
+                            <i class="icon-file"></i>
+                                Form.php
+                                <small style="float: right;padding-right: 10px;">1</small>
+                            </h3>
+                            <div>
+                                <table class="table markers table-bordered">
+                                    <tr>
+                                        <th>Type</th>
+                                        <th>Line</th>
+                                        <th>Description</th>
+                                    </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>5</td>
+                                            <td>www.zengularity.com).</td>
+                                        </tr>
+                                                                    </table>
+                            </div>
+                        </div>
+                                                                                <div class="package-contents">
+                            <a name="Fragment/Block/BlockInterface.php" id="Fragment/Block/BlockInterface.php"></a>
+                            <h3>
+                            <i class="icon-file"></i>
+                                Fragment/Block/BlockInterface.php
+                                <small style="float: right;padding-right: 10px;">1</small>
+                            </h3>
+                            <div>
+                                <table class="table markers table-bordered">
+                                    <tr>
+                                        <th>Type</th>
+                                        <th>Line</th>
+                                        <th>Description</th>
+                                    </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>5</td>
+                                            <td>www.zengularity.com).</td>
+                                        </tr>
+                                                                    </table>
+                            </div>
+                        </div>
+                                                                                <div class="package-contents">
+                            <a name="Fragment/Block/EmbedBlock.php" id="Fragment/Block/EmbedBlock.php"></a>
+                            <h3>
+                            <i class="icon-file"></i>
+                                Fragment/Block/EmbedBlock.php
+                                <small style="float: right;padding-right: 10px;">1</small>
+                            </h3>
+                            <div>
+                                <table class="table markers table-bordered">
+                                    <tr>
+                                        <th>Type</th>
+                                        <th>Line</th>
+                                        <th>Description</th>
+                                    </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>5</td>
+                                            <td>www.zengularity.com).</td>
+                                        </tr>
+                                                                    </table>
+                            </div>
+                        </div>
+                                                                                <div class="package-contents">
+                            <a name="Fragment/Block/HeadingBlock.php" id="Fragment/Block/HeadingBlock.php"></a>
+                            <h3>
+                            <i class="icon-file"></i>
+                                Fragment/Block/HeadingBlock.php
+                                <small style="float: right;padding-right: 10px;">1</small>
+                            </h3>
+                            <div>
+                                <table class="table markers table-bordered">
+                                    <tr>
+                                        <th>Type</th>
+                                        <th>Line</th>
+                                        <th>Description</th>
+                                    </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>5</td>
+                                            <td>www.zengularity.com).</td>
+                                        </tr>
+                                                                    </table>
+                            </div>
+                        </div>
+                                                                                <div class="package-contents">
+                            <a name="Fragment/Block/ImageBlock.php" id="Fragment/Block/ImageBlock.php"></a>
+                            <h3>
+                            <i class="icon-file"></i>
+                                Fragment/Block/ImageBlock.php
+                                <small style="float: right;padding-right: 10px;">1</small>
+                            </h3>
+                            <div>
+                                <table class="table markers table-bordered">
+                                    <tr>
+                                        <th>Type</th>
+                                        <th>Line</th>
+                                        <th>Description</th>
+                                    </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>5</td>
+                                            <td>www.zengularity.com).</td>
+                                        </tr>
+                                                                    </table>
+                            </div>
+                        </div>
+                                                                                <div class="package-contents">
+                            <a name="Fragment/Block/ListItemBlock.php" id="Fragment/Block/ListItemBlock.php"></a>
+                            <h3>
+                            <i class="icon-file"></i>
+                                Fragment/Block/ListItemBlock.php
+                                <small style="float: right;padding-right: 10px;">1</small>
+                            </h3>
+                            <div>
+                                <table class="table markers table-bordered">
+                                    <tr>
+                                        <th>Type</th>
+                                        <th>Line</th>
+                                        <th>Description</th>
+                                    </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>5</td>
+                                            <td>www.zengularity.com).</td>
+                                        </tr>
+                                                                    </table>
+                            </div>
+                        </div>
+                                                                                <div class="package-contents">
+                            <a name="Fragment/Block/ParagraphBlock.php" id="Fragment/Block/ParagraphBlock.php"></a>
+                            <h3>
+                            <i class="icon-file"></i>
+                                Fragment/Block/ParagraphBlock.php
+                                <small style="float: right;padding-right: 10px;">1</small>
+                            </h3>
+                            <div>
+                                <table class="table markers table-bordered">
+                                    <tr>
+                                        <th>Type</th>
+                                        <th>Line</th>
+                                        <th>Description</th>
+                                    </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>5</td>
+                                            <td>www.zengularity.com).</td>
+                                        </tr>
+                                                                    </table>
+                            </div>
+                        </div>
+                                                                                <div class="package-contents">
+                            <a name="Fragment/Block/PreformattedBlock.php" id="Fragment/Block/PreformattedBlock.php"></a>
+                            <h3>
+                            <i class="icon-file"></i>
+                                Fragment/Block/PreformattedBlock.php
+                                <small style="float: right;padding-right: 10px;">1</small>
+                            </h3>
+                            <div>
+                                <table class="table markers table-bordered">
+                                    <tr>
+                                        <th>Type</th>
+                                        <th>Line</th>
+                                        <th>Description</th>
+                                    </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>5</td>
+                                            <td>www.zengularity.com).</td>
+                                        </tr>
+                                                                    </table>
+                            </div>
+                        </div>
+                                                                                <div class="package-contents">
+                            <a name="Fragment/Block/TextInterface.php" id="Fragment/Block/TextInterface.php"></a>
+                            <h3>
+                            <i class="icon-file"></i>
+                                Fragment/Block/TextInterface.php
+                                <small style="float: right;padding-right: 10px;">1</small>
+                            </h3>
+                            <div>
+                                <table class="table markers table-bordered">
+                                    <tr>
+                                        <th>Type</th>
+                                        <th>Line</th>
+                                        <th>Description</th>
+                                    </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>5</td>
+                                            <td>www.zengularity.com).</td>
+                                        </tr>
+                                                                    </table>
+                            </div>
+                        </div>
+                                                                                <div class="package-contents">
+                            <a name="Fragment/BlockGroup.php" id="Fragment/BlockGroup.php"></a>
+                            <h3>
+                            <i class="icon-file"></i>
+                                Fragment/BlockGroup.php
+                                <small style="float: right;padding-right: 10px;">1</small>
+                            </h3>
+                            <div>
+                                <table class="table markers table-bordered">
+                                    <tr>
+                                        <th>Type</th>
+                                        <th>Line</th>
+                                        <th>Description</th>
+                                    </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>5</td>
+                                            <td>www.zengularity.com).</td>
+                                        </tr>
+                                                                    </table>
+                            </div>
+                        </div>
+                                                                                <div class="package-contents">
+                            <a name="Fragment/Color.php" id="Fragment/Color.php"></a>
+                            <h3>
+                            <i class="icon-file"></i>
+                                Fragment/Color.php
+                                <small style="float: right;padding-right: 10px;">1</small>
+                            </h3>
+                            <div>
+                                <table class="table markers table-bordered">
+                                    <tr>
+                                        <th>Type</th>
+                                        <th>Line</th>
+                                        <th>Description</th>
+                                    </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>5</td>
+                                            <td>www.zengularity.com).</td>
+                                        </tr>
+                                                                    </table>
+                            </div>
+                        </div>
+                                                                                <div class="package-contents">
+                            <a name="Fragment/Date.php" id="Fragment/Date.php"></a>
+                            <h3>
+                            <i class="icon-file"></i>
+                                Fragment/Date.php
+                                <small style="float: right;padding-right: 10px;">1</small>
+                            </h3>
+                            <div>
+                                <table class="table markers table-bordered">
+                                    <tr>
+                                        <th>Type</th>
+                                        <th>Line</th>
+                                        <th>Description</th>
+                                    </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>5</td>
+                                            <td>www.zengularity.com).</td>
+                                        </tr>
+                                                                    </table>
+                            </div>
+                        </div>
+                                                                                <div class="package-contents">
+                            <a name="Fragment/Embed.php" id="Fragment/Embed.php"></a>
+                            <h3>
+                            <i class="icon-file"></i>
+                                Fragment/Embed.php
+                                <small style="float: right;padding-right: 10px;">1</small>
+                            </h3>
+                            <div>
+                                <table class="table markers table-bordered">
+                                    <tr>
+                                        <th>Type</th>
+                                        <th>Line</th>
+                                        <th>Description</th>
+                                    </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>5</td>
+                                            <td>www.zengularity.com).</td>
+                                        </tr>
+                                                                    </table>
+                            </div>
+                        </div>
+                                                                                <div class="package-contents">
+                            <a name="Fragment/FragmentInterface.php" id="Fragment/FragmentInterface.php"></a>
+                            <h3>
+                            <i class="icon-file"></i>
+                                Fragment/FragmentInterface.php
+                                <small style="float: right;padding-right: 10px;">1</small>
+                            </h3>
+                            <div>
+                                <table class="table markers table-bordered">
+                                    <tr>
+                                        <th>Type</th>
+                                        <th>Line</th>
+                                        <th>Description</th>
+                                    </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>5</td>
+                                            <td>www.zengularity.com).</td>
+                                        </tr>
+                                                                    </table>
+                            </div>
+                        </div>
+                                                                                <div class="package-contents">
+                            <a name="Fragment/GeoPoint.php" id="Fragment/GeoPoint.php"></a>
+                            <h3>
+                            <i class="icon-file"></i>
+                                Fragment/GeoPoint.php
+                                <small style="float: right;padding-right: 10px;">1</small>
+                            </h3>
+                            <div>
+                                <table class="table markers table-bordered">
+                                    <tr>
+                                        <th>Type</th>
+                                        <th>Line</th>
+                                        <th>Description</th>
+                                    </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>5</td>
+                                            <td>www.zengularity.com).</td>
+                                        </tr>
+                                                                    </table>
+                            </div>
+                        </div>
+                                                                                <div class="package-contents">
+                            <a name="Fragment/Group.php" id="Fragment/Group.php"></a>
+                            <h3>
+                            <i class="icon-file"></i>
+                                Fragment/Group.php
+                                <small style="float: right;padding-right: 10px;">1</small>
+                            </h3>
+                            <div>
+                                <table class="table markers table-bordered">
+                                    <tr>
+                                        <th>Type</th>
+                                        <th>Line</th>
+                                        <th>Description</th>
+                                    </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>5</td>
+                                            <td>www.zengularity.com).</td>
+                                        </tr>
+                                                                    </table>
+                            </div>
+                        </div>
+                                                                                <div class="package-contents">
+                            <a name="Fragment/Image.php" id="Fragment/Image.php"></a>
+                            <h3>
+                            <i class="icon-file"></i>
+                                Fragment/Image.php
+                                <small style="float: right;padding-right: 10px;">1</small>
+                            </h3>
+                            <div>
+                                <table class="table markers table-bordered">
+                                    <tr>
+                                        <th>Type</th>
+                                        <th>Line</th>
+                                        <th>Description</th>
+                                    </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>5</td>
+                                            <td>www.zengularity.com).</td>
+                                        </tr>
+                                                                    </table>
+                            </div>
+                        </div>
+                                                                                <div class="package-contents">
+                            <a name="Fragment/ImageView.php" id="Fragment/ImageView.php"></a>
+                            <h3>
+                            <i class="icon-file"></i>
+                                Fragment/ImageView.php
+                                <small style="float: right;padding-right: 10px;">2</small>
+                            </h3>
+                            <div>
+                                <table class="table markers table-bordered">
+                                    <tr>
+                                        <th>Type</th>
+                                        <th>Line</th>
+                                        <th>Description</th>
+                                    </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>5</td>
+                                            <td>www.zengularity.com).</td>
+                                        </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>101</td>
+                                            <td>trim removes trailing newline</td>
+                                        </tr>
+                                                                    </table>
+                            </div>
+                        </div>
+                                                                                <div class="package-contents">
+                            <a name="Fragment/Link/DocumentLink.php" id="Fragment/Link/DocumentLink.php"></a>
+                            <h3>
+                            <i class="icon-file"></i>
+                                Fragment/Link/DocumentLink.php
+                                <small style="float: right;padding-right: 10px;">1</small>
+                            </h3>
+                            <div>
+                                <table class="table markers table-bordered">
+                                    <tr>
+                                        <th>Type</th>
+                                        <th>Line</th>
+                                        <th>Description</th>
+                                    </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>5</td>
+                                            <td>www.zengularity.com).</td>
+                                        </tr>
+                                                                    </table>
+                            </div>
+                        </div>
+                                                                                <div class="package-contents">
+                            <a name="Fragment/Link/FileLink.php" id="Fragment/Link/FileLink.php"></a>
+                            <h3>
+                            <i class="icon-file"></i>
+                                Fragment/Link/FileLink.php
+                                <small style="float: right;padding-right: 10px;">1</small>
+                            </h3>
+                            <div>
+                                <table class="table markers table-bordered">
+                                    <tr>
+                                        <th>Type</th>
+                                        <th>Line</th>
+                                        <th>Description</th>
+                                    </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>5</td>
+                                            <td>www.zengularity.com).</td>
+                                        </tr>
+                                                                    </table>
+                            </div>
+                        </div>
+                                                                                <div class="package-contents">
+                            <a name="Fragment/Link/ImageLink.php" id="Fragment/Link/ImageLink.php"></a>
+                            <h3>
+                            <i class="icon-file"></i>
+                                Fragment/Link/ImageLink.php
+                                <small style="float: right;padding-right: 10px;">1</small>
+                            </h3>
+                            <div>
+                                <table class="table markers table-bordered">
+                                    <tr>
+                                        <th>Type</th>
+                                        <th>Line</th>
+                                        <th>Description</th>
+                                    </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>5</td>
+                                            <td>www.zengularity.com).</td>
+                                        </tr>
+                                                                    </table>
+                            </div>
+                        </div>
+                                                                                <div class="package-contents">
+                            <a name="Fragment/Link/LinkInterface.php" id="Fragment/Link/LinkInterface.php"></a>
+                            <h3>
+                            <i class="icon-file"></i>
+                                Fragment/Link/LinkInterface.php
+                                <small style="float: right;padding-right: 10px;">1</small>
+                            </h3>
+                            <div>
+                                <table class="table markers table-bordered">
+                                    <tr>
+                                        <th>Type</th>
+                                        <th>Line</th>
+                                        <th>Description</th>
+                                    </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>5</td>
+                                            <td>www.zengularity.com).</td>
+                                        </tr>
+                                                                    </table>
+                            </div>
+                        </div>
+                                                                                <div class="package-contents">
+                            <a name="Fragment/Link/WebLink.php" id="Fragment/Link/WebLink.php"></a>
+                            <h3>
+                            <i class="icon-file"></i>
+                                Fragment/Link/WebLink.php
+                                <small style="float: right;padding-right: 10px;">1</small>
+                            </h3>
+                            <div>
+                                <table class="table markers table-bordered">
+                                    <tr>
+                                        <th>Type</th>
+                                        <th>Line</th>
+                                        <th>Description</th>
+                                    </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>5</td>
+                                            <td>www.zengularity.com).</td>
+                                        </tr>
+                                                                    </table>
+                            </div>
+                        </div>
+                                                                                <div class="package-contents">
+                            <a name="Fragment/Number.php" id="Fragment/Number.php"></a>
+                            <h3>
+                            <i class="icon-file"></i>
+                                Fragment/Number.php
+                                <small style="float: right;padding-right: 10px;">1</small>
+                            </h3>
+                            <div>
+                                <table class="table markers table-bordered">
+                                    <tr>
+                                        <th>Type</th>
+                                        <th>Line</th>
+                                        <th>Description</th>
+                                    </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>5</td>
+                                            <td>www.zengularity.com).</td>
+                                        </tr>
+                                                                    </table>
+                            </div>
+                        </div>
+                                                                                <div class="package-contents">
+                            <a name="Fragment/ParsedText.php" id="Fragment/ParsedText.php"></a>
+                            <h3>
+                            <i class="icon-file"></i>
+                                Fragment/ParsedText.php
+                                <small style="float: right;padding-right: 10px;">1</small>
+                            </h3>
+                            <div>
+                                <table class="table markers table-bordered">
+                                    <tr>
+                                        <th>Type</th>
+                                        <th>Line</th>
+                                        <th>Description</th>
+                                    </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>5</td>
+                                            <td>www.zengularity.com).</td>
+                                        </tr>
+                                                                    </table>
+                            </div>
+                        </div>
+                                                                                <div class="package-contents">
+                            <a name="Fragment/Span/EmSpan.php" id="Fragment/Span/EmSpan.php"></a>
+                            <h3>
+                            <i class="icon-file"></i>
+                                Fragment/Span/EmSpan.php
+                                <small style="float: right;padding-right: 10px;">1</small>
+                            </h3>
+                            <div>
+                                <table class="table markers table-bordered">
+                                    <tr>
+                                        <th>Type</th>
+                                        <th>Line</th>
+                                        <th>Description</th>
+                                    </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>5</td>
+                                            <td>www.zengularity.com).</td>
+                                        </tr>
+                                                                    </table>
+                            </div>
+                        </div>
+                                                                                <div class="package-contents">
+                            <a name="Fragment/Span/HyperlinkSpan.php" id="Fragment/Span/HyperlinkSpan.php"></a>
+                            <h3>
+                            <i class="icon-file"></i>
+                                Fragment/Span/HyperlinkSpan.php
+                                <small style="float: right;padding-right: 10px;">1</small>
+                            </h3>
+                            <div>
+                                <table class="table markers table-bordered">
+                                    <tr>
+                                        <th>Type</th>
+                                        <th>Line</th>
+                                        <th>Description</th>
+                                    </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>5</td>
+                                            <td>www.zengularity.com).</td>
+                                        </tr>
+                                                                    </table>
+                            </div>
+                        </div>
+                                                                                <div class="package-contents">
+                            <a name="Fragment/Span/SpanInterface.php" id="Fragment/Span/SpanInterface.php"></a>
+                            <h3>
+                            <i class="icon-file"></i>
+                                Fragment/Span/SpanInterface.php
+                                <small style="float: right;padding-right: 10px;">1</small>
+                            </h3>
+                            <div>
+                                <table class="table markers table-bordered">
+                                    <tr>
+                                        <th>Type</th>
+                                        <th>Line</th>
+                                        <th>Description</th>
+                                    </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>5</td>
+                                            <td>www.zengularity.com).</td>
+                                        </tr>
+                                                                    </table>
+                            </div>
+                        </div>
+                                                                                <div class="package-contents">
+                            <a name="Fragment/Span/StrongSpan.php" id="Fragment/Span/StrongSpan.php"></a>
+                            <h3>
+                            <i class="icon-file"></i>
+                                Fragment/Span/StrongSpan.php
+                                <small style="float: right;padding-right: 10px;">1</small>
+                            </h3>
+                            <div>
+                                <table class="table markers table-bordered">
+                                    <tr>
+                                        <th>Type</th>
+                                        <th>Line</th>
+                                        <th>Description</th>
+                                    </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>5</td>
+                                            <td>www.zengularity.com).</td>
+                                        </tr>
+                                                                    </table>
+                            </div>
+                        </div>
+                                                                                <div class="package-contents">
+                            <a name="Fragment/StructuredText.php" id="Fragment/StructuredText.php"></a>
+                            <h3>
+                            <i class="icon-file"></i>
+                                Fragment/StructuredText.php
+                                <small style="float: right;padding-right: 10px;">23</small>
+                            </h3>
+                            <div>
+                                <table class="table markers table-bordered">
+                                    <tr>
+                                        <th>Type</th>
+                                        <th>Line</th>
+                                        <th>Description</th>
+                                    </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>5</td>
+                                            <td>www.zengularity.com).</td>
+                                        </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>300</td>
+                                            <td>Get length of node&#039;s text content</td>
+                                        </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>303</td>
+                                            <td>If this is a text node we have found the right node</td>
+                                        </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>306</td>
+                                            <td>The span is too long for the node -- we have improperly</td>
+                                        </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>307</td>
+                                            <td>nested spans</td>
+                                        </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>308</td>
+                                            <td>throw new \Exception(&quot;Improperly nested span of type &quot; . get_class($span) . &quot; starting at offset {$span-&gt;getStart()}&quot;);</td>
+                                        </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>312</td>
+                                            <td>Split the text node into a head, meat and tail</td>
+                                        </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>316</td>
+                                            <td>Decide element type and attributes based on span class</td>
+                                        </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>330</td>
+                                            <td>We have no link (LinkResolver said it is not valid,</td>
+                                        </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>331</td>
+                                            <td>or something else went wrong). Abort this span.</td>
+                                        </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>335</td>
+                                            <td>throw new \Exception(&quot;Unknown span type &quot; . get_class($span));</td>
+                                        </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>342</td>
+                                            <td>Make the new span element, and put the text from the meat</td>
+                                        </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>343</td>
+                                            <td>inside</td>
+                                        </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>349</td>
+                                            <td>Replace the original meat text node with the span</td>
+                                        </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>355</td>
+                                            <td>Skip this node if the span start is beyond it</td>
+                                        </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>360</td>
+                                            <td>Loop over child nodes to find the correct one</td>
+                                        </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>365</td>
+                                            <td>This is the right node -- recurse</td>
+                                        </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>372</td>
+                                            <td>Not found</td>
+                                        </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>378</td>
+                                            <td>throw new \Exception(&quot;Span of type &quot; . get_class($span) . &quot; starting at {$span-&gt;getStart()} ends at {$span-&gt;getEnd()} (before it begins)&quot;);</td>
+                                        </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>401</td>
+                                            <td>Blocks</td>
+                                        </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>416</td>
+                                            <td>Spans</td>
+                                        </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>430</td>
+                                            <td>We have no link (LinkResolver said it is not valid,</td>
+                                        </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>431</td>
+                                            <td>or something else went wrong). Abort this span.</td>
+                                        </tr>
+                                                                    </table>
+                            </div>
+                        </div>
+                                                                                <div class="package-contents">
+                            <a name="Fragment/Text.php" id="Fragment/Text.php"></a>
+                            <h3>
+                            <i class="icon-file"></i>
+                                Fragment/Text.php
+                                <small style="float: right;padding-right: 10px;">1</small>
+                            </h3>
+                            <div>
+                                <table class="table markers table-bordered">
+                                    <tr>
+                                        <th>Type</th>
+                                        <th>Line</th>
+                                        <th>Description</th>
+                                    </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>5</td>
+                                            <td>www.zengularity.com).</td>
+                                        </tr>
+                                                                    </table>
+                            </div>
+                        </div>
+                                                                                <div class="package-contents">
+                            <a name="Fragment/Timestamp.php" id="Fragment/Timestamp.php"></a>
+                            <h3>
+                            <i class="icon-file"></i>
+                                Fragment/Timestamp.php
+                                <small style="float: right;padding-right: 10px;">1</small>
+                            </h3>
+                            <div>
+                                <table class="table markers table-bordered">
+                                    <tr>
+                                        <th>Type</th>
+                                        <th>Line</th>
+                                        <th>Description</th>
+                                    </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>5</td>
+                                            <td>www.zengularity.com).</td>
+                                        </tr>
+                                                                    </table>
+                            </div>
+                        </div>
+                                                                                <div class="package-contents">
+                            <a name="LinkResolver.php" id="LinkResolver.php"></a>
+                            <h3>
+                            <i class="icon-file"></i>
+                                LinkResolver.php
+                                <small style="float: right;padding-right: 10px;">2</small>
+                            </h3>
+                            <div>
+                                <table class="table markers table-bordered">
+                                    <tr>
+                                        <th>Type</th>
+                                        <th>Line</th>
+                                        <th>Description</th>
+                                    </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>5</td>
+                                            <td>www.zengularity.com).</td>
+                                        </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>24</td>
+                                            <td>developers.prismic.io/documentation/UjBe8bGIJ3EKtgBZ/api-documentation&quot;&gt;prismic.io&#039;s API documentation&lt;/a&gt;</td>
+                                        </tr>
+                                                                    </table>
+                            </div>
+                        </div>
+                                                                                <div class="package-contents">
+                            <a name="LinkedDocument.php" id="LinkedDocument.php"></a>
+                            <h3>
+                            <i class="icon-file"></i>
+                                LinkedDocument.php
+                                <small style="float: right;padding-right: 10px;">1</small>
+                            </h3>
+                            <div>
+                                <table class="table markers table-bordered">
+                                    <tr>
+                                        <th>Type</th>
+                                        <th>Line</th>
+                                        <th>Description</th>
+                                    </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>5</td>
+                                            <td>www.zengularity.com).</td>
+                                        </tr>
+                                                                    </table>
+                            </div>
+                        </div>
+                                                                                <div class="package-contents">
+                            <a name="Ref.php" id="Ref.php"></a>
+                            <h3>
+                            <i class="icon-file"></i>
+                                Ref.php
+                                <small style="float: right;padding-right: 10px;">2</small>
+                            </h3>
+                            <div>
+                                <table class="table markers table-bordered">
+                                    <tr>
+                                        <th>Type</th>
+                                        <th>Line</th>
+                                        <th>Description</th>
+                                    </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>5</td>
+                                            <td>www.zengularity.com).</td>
+                                        </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>138</td>
+                                            <td>@todo: convert value into \DateTime ?</td>
+                                        </tr>
+                                                                    </table>
+                            </div>
+                        </div>
+                                                                                <div class="package-contents">
+                            <a name="Response.php" id="Response.php"></a>
+                            <h3>
+                            <i class="icon-file"></i>
+                                Response.php
+                                <small style="float: right;padding-right: 10px;">1</small>
+                            </h3>
+                            <div>
+                                <table class="table markers table-bordered">
+                                    <tr>
+                                        <th>Type</th>
+                                        <th>Line</th>
+                                        <th>Description</th>
+                                    </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>5</td>
+                                            <td>www.zengularity.com).</td>
+                                        </tr>
+                                                                    </table>
+                            </div>
+                        </div>
+                                                                                <div class="package-contents">
+                            <a name="SearchForm.php" id="SearchForm.php"></a>
+                            <h3>
+                            <i class="icon-file"></i>
+                                SearchForm.php
+                                <small style="float: right;padding-right: 10px;">2</small>
+                            </h3>
+                            <div>
+                                <table class="table markers table-bordered">
+                                    <tr>
+                                        <th>Type</th>
+                                        <th>Line</th>
+                                        <th>Description</th>
+                                    </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>5</td>
+                                            <td>www.zengularity.com).</td>
+                                        </tr>
+                                                                            <tr>
+                                            <td></td>
+                                            <td>227</td>
+                                            <td>Temporary Hack for backward compatibility</td>
+                                        </tr>
+                                                                    </table>
+                            </div>
+                        </div>
+                                                </div>
+        </div>
+    </section>
+
+    <footer class="row-fluid">
+        <section class="span10 offset2">
+            <section class="row-fluid">
+                <section class="span10 offset1">
+                    <section class="row-fluid footer-sections">
+                        <section class="span4">
+                                                        <h1><i class="icon-code"></i></h1>
+                            <div>
+                                <ul>
+                                                                            <li><a href="../namespaces/Prismic.html">\Prismic</a></li>
+                                                                    </ul>
+                            </div>
+                        </section>
+                        <section class="span4">
+                                                        <h1><i class="icon-bar-chart"></i></h1>
+                            <div>
+                                <ul>
+                                    <li><a href="../graphs/class.html">Class Hierarchy Diagram</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                        <section class="span4">
+                                                        <h1><i class="icon-pushpin"></i></h1>
+                            <div>
+                                <ul>
+                                    <li><a href="../reports/errors.html">Errors</a></li>
+                                    <li><a href="../reports/markers.html">Markers</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                    </section>
+                </section>
+            </section>
+            <section class="row-fluid">
+                <section class="span10 offset1">
+                    <hr />
+                    Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
+                    on 
+Warning: date_default_timezone_get(): It is not safe to rely on the system's timezone settings. You are *required* to use the date.timezone setting or the date_default_timezone_set() function. In case you used any of those methods and you are still getting this warning, you most likely misspelled the timezone identifier. We selected the timezone 'UTC' for now, but please set date.timezone to select your timezone. in /Volumes/Devdisk/Prismic/php-kit/vendor/twig/twig/lib/Twig/Extension/Core.php on line 89
+September 24th, 2014 at 13:22.
+                </section>
+            </section>
+        </section>
+    </footer>
+</div>
+
+</body>
+</html>

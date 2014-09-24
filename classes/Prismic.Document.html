@@ -1,0 +1,1939 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta charset="utf-8"/>
+    <title>API Documentation</title>
+    <meta name="author" content=""/>
+    <meta name="description" content=""/>
+
+    <link href="../css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/prism.css" rel="stylesheet" media="all"/>
+    <link href="../css/template.css" rel="stylesheet" media="all"/>
+    
+    <!--[if lt IE 9]>
+    <script src="../js/html5.js"></script>
+    <![endif]-->
+    <script src="../js/jquery-1.11.0.min.js"></script>
+    <script src="../js/ui/1.10.4/jquery-ui.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jquery.smooth-scroll.js"></script>
+    <script src="../js/prism.min.js"></script>
+    <!-- TODO: Add http://jscrollpane.kelvinluck.com/ to style the scrollbars for browsers not using webkit-->
+    <script type="text/javascript">
+    function loadExternalCodeSnippets() {
+        Array.prototype.slice.call(document.querySelectorAll('pre[data-src]')).forEach(function (pre) {
+            var src = pre.getAttribute('data-src');
+            var extension = (src.match(/\.(\w+)$/) || [, ''])[1];
+            var language = 'php';
+
+            var code = document.createElement('code');
+            code.className = 'language-' + language;
+
+            pre.textContent = '';
+
+            code.textContent = 'Loading…';
+
+            pre.appendChild(code);
+
+            var xhr = new XMLHttpRequest();
+
+            xhr.open('GET', src, true);
+
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4) {
+
+                    if (xhr.status < 400 && xhr.responseText) {
+                        code.textContent = xhr.responseText;
+
+                        Prism.highlightElement(code);
+                    }
+                    else if (xhr.status >= 400) {
+                        code.textContent = '✖ Error ' + xhr.status + ' while fetching file: ' + xhr.statusText;
+                    }
+                    else {
+                        code.textContent = '✖ Error: File does not exist or is empty';
+                    }
+                }
+            };
+
+            xhr.send(null);
+        });
+    }
+
+    $(document).ready(function(){
+        loadExternalCodeSnippets();
+    });
+    $('#source-view').on('shown', function () {
+        loadExternalCodeSnippets();
+    })
+</script>
+
+    <link rel="shortcut icon" href="../images/favicon.ico"/>
+    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
+    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
+    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+</head>
+<body>
+
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <i class="icon-ellipsis-vertical"></i>
+            </a>
+            <a class="brand" href="../index.html">API Documentation</a>
+
+            <div class="nav-collapse">
+                <ul class="nav pull-right">
+                                        <li class="dropdown">
+                        <a href="../index.html" class="dropdown-toggle" data-toggle="dropdown">
+                            API Documentation <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                                                        <li><a href="../namespaces/Prismic.html">\Prismic</a></li>
+                                                    </ul>
+                    </li>
+                                        <li class="dropdown" id="charts-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Charts <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../graphs/class.html">
+                                    <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown" id="reports-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Reports <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../reports/errors.html">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <i class="icon-list-alt"></i>&#160;Errors <span class="label label-info pull-right">14</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../reports/markers.html">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <i class="icon-list-alt"></i>&#160;Markers <span class="label label-info pull-right">72</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../reports/deprecated.html">
+                                                                                                                                                                                                                                                                    <i class="icon-list-alt"></i>&#160;Deprecated <span class="label label-info pull-right">2</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--<div class="go_to_top">-->
+    <!--<a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>-->
+    <!--</div>-->
+</div>
+
+<div id="___" class="container-fluid">
+        <section class="row-fluid">
+        <div class="span2 sidebar">
+                                <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-577645474"></a>
+                                <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
+            </div>
+            <div id="namespace-577645474" class="accordion-body collapse in">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-837750613"></a>
+                                <a href="../namespaces/Prismic.html" style="margin-left: 30px; padding-left: 0">Prismic</a>
+            </div>
+            <div id="namespace-837750613" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-88584435"></a>
+                                <a href="../namespaces/Prismic.Cache.html" style="margin-left: 30px; padding-left: 0">Cache</a>
+            </div>
+            <div id="namespace-88584435" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                    <li class="interface"><a href="../classes/Prismic.Cache.CacheInterface.html">CacheInterface</a></li>
+                                                                                                    <li class="class"><a href="../classes/Prismic.Cache.DefaultCache.html">DefaultCache</a></li>
+                                                    <li class="class"><a href="../classes/Prismic.Cache.NoCache.html">NoCache</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-36650486"></a>
+                                <a href="../namespaces/Prismic.Fragment.html" style="margin-left: 30px; padding-left: 0">Fragment</a>
+            </div>
+            <div id="namespace-36650486" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1821392440"></a>
+                                <a href="../namespaces/Prismic.Fragment.Block.html" style="margin-left: 30px; padding-left: 0">Block</a>
+            </div>
+            <div id="namespace-1821392440" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                    <li class="interface"><a href="../classes/Prismic.Fragment.Block.BlockInterface.html">BlockInterface</a></li>
+                                                    <li class="interface"><a href="../classes/Prismic.Fragment.Block.TextInterface.html">TextInterface</a></li>
+                                                                                                    <li class="class"><a href="../classes/Prismic.Fragment.Block.EmbedBlock.html">EmbedBlock</a></li>
+                                                    <li class="class"><a href="../classes/Prismic.Fragment.Block.HeadingBlock.html">HeadingBlock</a></li>
+                                                    <li class="class"><a href="../classes/Prismic.Fragment.Block.ImageBlock.html">ImageBlock</a></li>
+                                                    <li class="class"><a href="../classes/Prismic.Fragment.Block.ListItemBlock.html">ListItemBlock</a></li>
+                                                    <li class="class"><a href="../classes/Prismic.Fragment.Block.ParagraphBlock.html">ParagraphBlock</a></li>
+                                                    <li class="class"><a href="../classes/Prismic.Fragment.Block.PreformattedBlock.html">PreformattedBlock</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1783867738"></a>
+                                <a href="../namespaces/Prismic.Fragment.Link.html" style="margin-left: 30px; padding-left: 0">Link</a>
+            </div>
+            <div id="namespace-1783867738" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                    <li class="interface"><a href="../classes/Prismic.Fragment.Link.LinkInterface.html">LinkInterface</a></li>
+                                                                                                    <li class="class"><a href="../classes/Prismic.Fragment.Link.DocumentLink.html">DocumentLink</a></li>
+                                                    <li class="class"><a href="../classes/Prismic.Fragment.Link.FileLink.html">FileLink</a></li>
+                                                    <li class="class"><a href="../classes/Prismic.Fragment.Link.ImageLink.html">ImageLink</a></li>
+                                                    <li class="class"><a href="../classes/Prismic.Fragment.Link.WebLink.html">WebLink</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-378870427"></a>
+                                <a href="../namespaces/Prismic.Fragment.Span.html" style="margin-left: 30px; padding-left: 0">Span</a>
+            </div>
+            <div id="namespace-378870427" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                    <li class="interface"><a href="../classes/Prismic.Fragment.Span.SpanInterface.html">SpanInterface</a></li>
+                                                                                                    <li class="class"><a href="../classes/Prismic.Fragment.Span.EmSpan.html">EmSpan</a></li>
+                                                    <li class="class"><a href="../classes/Prismic.Fragment.Span.HyperlinkSpan.html">HyperlinkSpan</a></li>
+                                                    <li class="class"><a href="../classes/Prismic.Fragment.Span.StrongSpan.html">StrongSpan</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                    <li class="interface"><a href="../classes/Prismic.Fragment.FragmentInterface.html">FragmentInterface</a></li>
+                                                                                                    <li class="class"><a href="../classes/Prismic.Fragment.BlockGroup.html">BlockGroup</a></li>
+                                                    <li class="class"><a href="../classes/Prismic.Fragment.Color.html">Color</a></li>
+                                                    <li class="class"><a href="../classes/Prismic.Fragment.Date.html">Date</a></li>
+                                                    <li class="class"><a href="../classes/Prismic.Fragment.Embed.html">Embed</a></li>
+                                                    <li class="class"><a href="../classes/Prismic.Fragment.GeoPoint.html">GeoPoint</a></li>
+                                                    <li class="class"><a href="../classes/Prismic.Fragment.Group.html">Group</a></li>
+                                                    <li class="class"><a href="../classes/Prismic.Fragment.Image.html">Image</a></li>
+                                                    <li class="class"><a href="../classes/Prismic.Fragment.ImageView.html">ImageView</a></li>
+                                                    <li class="class"><a href="../classes/Prismic.Fragment.Number.html">Number</a></li>
+                                                    <li class="class"><a href="../classes/Prismic.Fragment.ParsedText.html">ParsedText</a></li>
+                                                    <li class="class"><a href="../classes/Prismic.Fragment.StructuredText.html">StructuredText</a></li>
+                                                    <li class="class"><a href="../classes/Prismic.Fragment.Text.html">Text</a></li>
+                                                    <li class="class"><a href="../classes/Prismic.Fragment.Timestamp.html">Timestamp</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Prismic.Api.html">Api</a></li>
+                                                    <li class="class"><a href="../classes/Prismic.ApiData.html">ApiData</a></li>
+                                                    <li class="class"><a href="../classes/Prismic.Document.html">Document</a></li>
+                                                    <li class="class"><a href="../classes/Prismic.FieldForm.html">FieldForm</a></li>
+                                                    <li class="class"><a href="../classes/Prismic.Form.html">Form</a></li>
+                                                    <li class="class"><a href="../classes/Prismic.LinkedDocument.html">LinkedDocument</a></li>
+                                                    <li class="class"><a href="../classes/Prismic.LinkResolver.html">LinkResolver</a></li>
+                                                    <li class="class"><a href="../classes/Prismic.Ref.html">Ref</a></li>
+                                                    <li class="class"><a href="../classes/Prismic.Response.html">Response</a></li>
+                                                    <li class="class"><a href="../classes/Prismic.SearchForm.html">SearchForm</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        </div>
+    </section>
+    <section class="row-fluid">
+        <div class="span10 offset2">
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <nav>
+                                                <a href="../namespaces/Prismic.html">\Prismic</a> <i class="icon-level-up"></i>
+                                            </nav>
+                    <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal"><i class="icon-code"></i></a>
+
+                    <h1><small>\Prismic</small>Document</h1>
+                    <p><em>Embodies a document retrieved from the API, which we&#039;ll be able to manipulate.</em></p>
+                    
+                    
+                                        
+                    <section id="summary">
+                        <h2>Summary</h2>
+                        <section class="row-fluid heading">
+                            <section class="span4">
+                                <a href="#methods">Methods</a>
+                            </section>
+                            <section class="span4">
+                                <a href="#properties">Properties</a>
+                            </section>
+                            <section class="span4">
+                                <a href="#constants">Constants</a>
+                            </section>
+                        </section>
+                        <section class="row-fluid public">
+                            <section class="span4">
+                                                                    <a href="../classes/Prismic.Document.html#method___construct" class="">__construct()</a><br />
+                                                                    <a href="../classes/Prismic.Document.html#method_getSlug" class="">getSlug()</a><br />
+                                                                    <a href="../classes/Prismic.Document.html#method_getLinkedDocuments" class="">getLinkedDocuments()</a><br />
+                                                                    <a href="../classes/Prismic.Document.html#method_containsSlug" class="">containsSlug()</a><br />
+                                                                    <a href="../classes/Prismic.Document.html#method_get" class="">get()</a><br />
+                                                                    <a href="../classes/Prismic.Document.html#method_has" class="">has()</a><br />
+                                                                    <a href="../classes/Prismic.Document.html#method_getAll" class="deprecated">getAll()</a><br />
+                                                                    <a href="../classes/Prismic.Document.html#method_getText" class="">getText()</a><br />
+                                                                    <a href="../classes/Prismic.Document.html#method_getNumber" class="">getNumber()</a><br />
+                                                                    <a href="../classes/Prismic.Document.html#method_getGeoPoint" class="">getGeoPoint()</a><br />
+                                                                    <a href="../classes/Prismic.Document.html#method_getBoolean" class="">getBoolean()</a><br />
+                                                                    <a href="../classes/Prismic.Document.html#method_getDate" class="">getDate()</a><br />
+                                                                    <a href="../classes/Prismic.Document.html#method_getTimestamp" class="">getTimestamp()</a><br />
+                                                                    <a href="../classes/Prismic.Document.html#method_getHtml" class="">getHtml()</a><br />
+                                                                    <a href="../classes/Prismic.Document.html#method_getImage" class="">getImage()</a><br />
+                                                                    <a href="../classes/Prismic.Document.html#method_getAllImages" class="">getAllImages()</a><br />
+                                                                    <a href="../classes/Prismic.Document.html#method_getImageView" class="">getImageView()</a><br />
+                                                                    <a href="../classes/Prismic.Document.html#method_getAllImageViews" class="deprecated">getAllImageViews()</a><br />
+                                                                    <a href="../classes/Prismic.Document.html#method_getStructuredText" class="">getStructuredText()</a><br />
+                                                                    <a href="../classes/Prismic.Document.html#method_getLink" class="">getLink()</a><br />
+                                                                    <a href="../classes/Prismic.Document.html#method_getGroup" class="">getGroup()</a><br />
+                                                                    <a href="../classes/Prismic.Document.html#method_asHtml" class="">asHtml()</a><br />
+                                                                    <a href="../classes/Prismic.Document.html#method_getId" class="">getId()</a><br />
+                                                                    <a href="../classes/Prismic.Document.html#method_getType" class="">getType()</a><br />
+                                                                    <a href="../classes/Prismic.Document.html#method_getHref" class="">getHref()</a><br />
+                                                                    <a href="../classes/Prismic.Document.html#method_getTags" class="">getTags()</a><br />
+                                                                    <a href="../classes/Prismic.Document.html#method_getSlugs" class="">getSlugs()</a><br />
+                                                                    <a href="../classes/Prismic.Document.html#method_getFragments" class="">getFragments()</a><br />
+                                                                    <a href="../classes/Prismic.Document.html#method_parseFragment" class="">parseFragment()</a><br />
+                                                                    <a href="../classes/Prismic.Document.html#method_parse" class="">parse()</a><br />
+                                                            </section>
+                            <section class="span4">
+                                                                    <em>No public properties found</em>
+                                                            </section>
+                            <section class="span4">
+                                                                    <em>No constants found</em>
+                                                            </section>
+                        </section>
+                        <section class="row-fluid protected">
+                            <section class="span4">
+                                                                    <em>No protected methods found</em>
+                                                            </section>
+                            <section class="span4">
+                                                                    <em>No protected properties found</em>
+                                                            </section>
+                            <section class="span4">
+                                <em>N/A</em>
+                            </section>
+                        </section>
+                        <section class="row-fluid private">
+                            <section class="span4">
+                                                                    <em>No private methods found</em>
+                                                            </section>
+                            <section class="span4">
+                                                                    <a href="../classes/Prismic.Document.html#property_id" class="">$id</a><br />
+                                                                    <a href="../classes/Prismic.Document.html#property_type" class="">$type</a><br />
+                                                                    <a href="../classes/Prismic.Document.html#property_href" class="">$href</a><br />
+                                                                    <a href="../classes/Prismic.Document.html#property_tags" class="">$tags</a><br />
+                                                                    <a href="../classes/Prismic.Document.html#property_slugs" class="">$slugs</a><br />
+                                                                    <a href="../classes/Prismic.Document.html#property_fragments" class="">$fragments</a><br />
+                                                            </section>
+                            <section class="span4">
+                                <em>N/A</em>
+                            </section>
+                        </section>
+                    </section>
+                </div>
+                <aside class="span4 detailsbar">
+                                        
+                    
+                    <dl>
+                        <dt>File</dt>
+                            <dd><a href="../files/Document.html"><div class="path-wrapper">Document.php</div></a></dd>
+                                                <dt>Package</dt>
+                            <dd><div class="namespace-wrapper">Default</div></dd>
+                                                <dt>Class hierarchy</dt>
+                            <dd class="hierarchy">
+                                                                                                                                                                    <div class="namespace-wrapper">\Prismic\Document</div>
+                            </dd>
+
+                        
+                        
+                        
+                        
+                                                                        </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">
+                                            <tr><td colspan="2"><em>None found</em></td></tr>
+                                        </table>
+                </aside>
+            </div>
+
+                        
+                                    <a id="properties" name="properties"></a>
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <h2>Properties</h2>
+                </div>
+                <aside class="span4 detailsbar"></aside>
+            </div>
+
+                                                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_id" name="property_id" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$id</h3>
+                <pre class="signature">$id : string</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                string
+                &mdash; the ID of the document (please use instance methods to get information that is in there)                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_type" name="property_type" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$type</h3>
+                <pre class="signature">$type : string</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                string
+                &mdash; the type of the document (please use instance methods to get information that is in there)                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_href" name="property_href" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$href</h3>
+                <pre class="signature">$href : string</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                string
+                &mdash; the URL of the document in the repository&#039;s API (please use instance methods to get information that is in there)                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_tags" name="property_tags" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$tags</h3>
+                <pre class="signature">$tags : array</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                array
+                &mdash; the tags used in the document (please use instance methods to get information that is in there)                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_slugs" name="property_slugs" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$slugs</h3>
+                <pre class="signature">$slugs : array</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                array
+                &mdash; the slugs used in the document, in the past and today; today&#039;s slug is the head (please use instance methods to get information that is in there)                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_fragments" name="property_fragments" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$fragments</h3>
+                <pre class="signature">$fragments : array</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                array
+                &mdash; all the fragments in the document (please use instance methods to get information that is in there)                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                            
+                                    <a id="methods" name="methods"></a>
+            <div class="row-fluid">
+                <div class="span8 content class"><h2>Methods</h2></div>
+                <aside class="span4 detailsbar"></aside>
+            </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method___construct" name="method___construct" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">__construct()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">__construct(string  <span class="argument">$id</span>, string  <span class="argument">$type</span>, string  <span class="argument">$href</span>, array  <span class="argument">$tags</span>, array  <span class="argument">$slugs</span>, array  <span class="argument">$linkedDocuments</span>, array  <span class="argument">$fragments</span>) </pre>
+                <p><em>Constructs a Document object. To be used only for testing purposes, as this gets done during the unmarshalling</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$id </td>
+                                <td><p>the ID of the document</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$type </td>
+                                <td><p>the type of the document</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$href </td>
+                                <td><p>the URL of the document in the repository's API</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>array</td>
+                                <td>$tags </td>
+                                <td><p>the tags used in the document</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>array</td>
+                                <td>$slugs </td>
+                                <td><p>the slugs used in the document, in the past and today; today's slug is the head</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>array</td>
+                                <td>$linkedDocuments </td>
+                                <td><p>the linked documents, from this document</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>array</td>
+                                <td>$fragments </td>
+                                <td><p>all the fragments in the document</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getSlug" name="method_getSlug" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getSlug()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getSlug() : string</pre>
+                <p><em>Returns the current slug of the document</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    string
+                                            &mdash; <p>the current slug of the document</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            api
+                        </th>
+                        <td>
+                                                                                            
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getLinkedDocuments" name="method_getLinkedDocuments" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getLinkedDocuments()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getLinkedDocuments() : string</pre>
+                <p><em>Returns the linked documents, from this document</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    string
+                                            &mdash; <p>the linked documents, from this document</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            api
+                        </th>
+                        <td>
+                                                                                            
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_containsSlug" name="method_containsSlug" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">containsSlug()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">containsSlug(string  <span class="argument">$slug</span>) : boolean</pre>
+                <p><em>Checks if a given slug is a past or current slug of the document</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$slug </td>
+                                <td><p>the slug to check</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    boolean
+                                            &mdash; <p>true if the slug is a past or current slug of the document, false otherwise</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            api
+                        </th>
+                        <td>
+                                                                                            
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_get" name="method_get" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">get()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">get(string  <span class="argument">$field</span>) : \Prismic\Fragment\FragmentInterface</pre>
+                <p><em>Accesses a fragment of the document. For instance, if the document is of the type &quot;product&quot;
+and the name of the fragment is &quot;description&quot;, then you can access the fragment like this:
+document-&gt;get(&#039;product.description&#039;).</em></p>
+                <p>If you prefer a more type-safe access, that only works if the fragment is of the right type,
+you can use the getStructuredText, getColor, getDate, etc. methods.</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$field </td>
+                                <td><p>name of the fragment, with the document's type, like "product.description"</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/Prismic.Fragment.FragmentInterface.html">\Prismic\Fragment\FragmentInterface</a>
+                                            &mdash; <p>the fragment as an object</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            api
+                        </th>
+                        <td>
+                                                                                            
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_has" name="method_has" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">has()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">has(string  <span class="argument">$field</span>) : boolean</pre>
+                <p><em>Checks if a given fragment exists in the document.</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$field </td>
+                                <td><p>name of the fragment, with the document's type, like "product.description"</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    boolean
+                                            &mdash; <p>true if the fragment exists, false otherwise</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            api
+                        </th>
+                        <td>
+                                                                                            
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getAll" name="method_getAll" class="anchor"></a>
+            <article class="method">
+                <h3 class="public deprecated">getAll()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getAll(string  <span class="argument">$field</span>) : array</pre>
+                <p><em>Returns all fragments of the name given</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$field </td>
+                                <td><p>name of the fragments</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    array
+                                            &mdash; <p>the list of fragments that exist</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                                <aside class="alert alert-block alert-error">
+                    <h4>Deprecated</h4>
+                    deprecated as it was meant to be used with an old concept called &quot;multiples&quot;; prefer to use Group fragments now, that are more powerful.
+                </aside>
+                        <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getText" name="method_getText" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getText()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getText(string  <span class="argument">$field</span>) : string</pre>
+                <p><em>For any fragment type that makes sense to return as a text value, returns the text value.</em></p>
+                <p>Works with: StructuredText, Number, Color, Text and Date fragments. If fragment is of the wrong type
+or doesn't exist, returns an empty string.</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$field </td>
+                                <td><p>name of the fragment, with the document's type, like "product.description"</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    string
+                                            &mdash; <p>the directly usable string</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            api
+                        </th>
+                        <td>
+                                                                                            
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getNumber" name="method_getNumber" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getNumber()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getNumber(string  <span class="argument">$field</span>, string  <span class="argument">$pattern = null</span>) : string</pre>
+                <p><em>Returns the string for a Number fragment, potentially matching a given pattern,
+and null of the fragment is of the wrong type, or if it doesn&#039;t exist.</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$field </td>
+                                <td><p>name of the fragment, with the document's type, like "product.price"</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$pattern </td>
+                                <td><p>with the syntax expected by sprintf; null if not used</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    string
+                                            &mdash; <p>the directly usable string, or null if the fragment is of the wrong type or unset</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            api
+                        </th>
+                        <td>
+                                                                                            
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getGeoPoint" name="method_getGeoPoint" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getGeoPoint()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getGeoPoint(string  <span class="argument">$field</span>) : \Prismic\Fragment\GeoPoint</pre>
+                <p><em>Returns a GeoPoint fragment or null if the fragment is of the wrong type, or if it doesn&#039;t exist.</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$field </td>
+                                <td><p>name of the fragment</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/Prismic.Fragment.GeoPoint.html">\Prismic\Fragment\GeoPoint</a>
+                                            &mdash; <p>Fragment</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            api
+                        </th>
+                        <td>
+                                                                                            
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getBoolean" name="method_getBoolean" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getBoolean()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getBoolean(string  <span class="argument">$field</span>) : boolean</pre>
+                <p><em>Returns a boolean for any type of fragment that extends Prismic\Fragment\Text, if the text is
+either &#039;yes&#039; or &#039;true&#039;, or null of the fragment is of the wrong type, or if it doesn&#039;t exist.</em></p>
+                <p>This works well with Select fragment for instance, where you set your values to "true" or "false".</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$field </td>
+                                <td><p>name of the fragment, with the document's type, like "product.withchocolate"</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    boolean
+                                            &mdash; <p>the directly usable boolean, or null if the fragment is of the wrong type or unset</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            api
+                        </th>
+                        <td>
+                                                                                            
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getDate" name="method_getDate" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getDate()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getDate(string  <span class="argument">$field</span>, string  <span class="argument">$pattern = null</span>) : string</pre>
+                <p><em>Returns the string for a Date fragment, potentially matching a given pattern,
+and null of the fragment is of the wrong type, or if it doesn&#039;t exist.</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$field </td>
+                                <td><p>name of the fragment, with the document's type, like "product.publishedAt"</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$pattern </td>
+                                <td><p>with the syntax expected by the date function; null if not used</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    string
+                                            &mdash; <p>the directly usable string, or null if the fragment is of the wrong type or unset</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            api
+                        </th>
+                        <td>
+                                                                                            
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getTimestamp" name="method_getTimestamp" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getTimestamp()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getTimestamp(string  <span class="argument">$field</span>) : \Prismic\Fragment\Timestamp</pre>
+                <p><em>Returns the usable Timestamp fragment as an object, ready to be manipulated.</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$field </td>
+                                <td><p>name of the fragment, with the document's type, like "product.publishedAt"</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/Prismic.Fragment.Timestamp.html">\Prismic\Fragment\Timestamp</a>
+                                            &mdash; <p>the directly usable Timestamp, or null if the fragment is of the wrong type or unset</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            api
+                        </th>
+                        <td>
+                                                                                            
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getHtml" name="method_getHtml" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getHtml()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getHtml(string  <span class="argument">$field</span>, \Prismic\LinkResolver  <span class="argument">$linkResolver = null</span>) : string</pre>
+                <p><em>Returns an HTML serialization for any kind of fragment. This is simply a faster way to write
+$doc-&gt;get($field)-&gt;asHtml($linkResolver).</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$field </td>
+                                <td><p>name of the fragment, with the document's type, like "product.description"</p></td>
+                            </tr>
+                                                    <tr>
+                                <td><a href="../classes/Prismic.LinkResolver.html">\Prismic\LinkResolver</a></td>
+                                <td>$linkResolver </td>
+                                <td><p>an extension of the Prismic\LinkResolver class that you taught how to turn a prismic.io document in to a URL in your application</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    string
+                                            &mdash; <p>the directly usable HTML code, or null if the fragment is unset</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            api
+                        </th>
+                        <td>
+                                                                                            
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getImage" name="method_getImage" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getImage()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getImage(string  <span class="argument">$field</span>) : \Prismic\Fragment\Image</pre>
+                <p><em>Returns the usable Image fragment as an object, ready to be manipulated.</em></p>
+                <p>This function also works on StructuredText fragment, and returns the first image in the fragment.</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$field </td>
+                                <td><p>name of the fragment, with the document's type, like "product.picture"</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/Prismic.Fragment.Image.html">\Prismic\Fragment\Image</a>
+                                            &mdash; <p>the directly usable HTML code, or null if the fragment is unset</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            api
+                        </th>
+                        <td>
+                                                                                            
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getAllImages" name="method_getAllImages" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getAllImages()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getAllImages(string  <span class="argument">$field</span>) : array</pre>
+                <p><em>Returns all the usable Image fragments in the given StructuredText fragment, ready to be manipulated.</em></p>
+                <p>This function also works on Image fragments, but only was useful in that case before Group fragments existed.</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$field </td>
+                                <td><p>name of the fragment, with the document's type, like "product.picture"</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    array
+                                            &mdash; <p>an array of all the Prismic\Fragment\Image objects found</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            api
+                        </th>
+                        <td>
+                                                                                            
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getImageView" name="method_getImageView" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getImageView()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getImageView(string  <span class="argument">$field</span>, string  <span class="argument">$view = null</span>) : \Prismic\Fragment\ImageView</pre>
+                <p><em>Returns the proper view of the given Image fragment, ready to be manipulated.</em></p>
+                <p>This function also works on StructuredText fragments, to return the first Image, if the view is set to "main".</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$field </td>
+                                <td><p>name of the fragment, with the document's type, like "product.picture"</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$view </td>
+                                <td><p>name of the view, like "small"</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/Prismic.Fragment.ImageView.html">\Prismic\Fragment\ImageView</a>
+                                            &mdash; <p>the directly usable object symbolizing the view</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            api
+                        </th>
+                        <td>
+                                                                                            
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getAllImageViews" name="method_getAllImageViews" class="anchor"></a>
+            <article class="method">
+                <h3 class="public deprecated">getAllImageViews()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getAllImageViews(string  <span class="argument">$field</span>, string  <span class="argument">$view</span>) : array</pre>
+                <p><em>Get all given views of all images for a given fragment name.</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$field </td>
+                                <td><p>name of the fragments, with the document's type, like "product.picture"</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$view </td>
+                                <td><p>name of the view, like "small"</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    array
+                                            &mdash; <p>all views of the image</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                                <aside class="alert alert-block alert-error">
+                    <h4>Deprecated</h4>
+                    deprecated because this only made sense when Group fragments didn&#039;t exist yet.
+                </aside>
+                        <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getStructuredText" name="method_getStructuredText" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getStructuredText()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getStructuredText(string  <span class="argument">$field</span>) : \Prismic\Fragment\StructuredText</pre>
+                <p><em>Returns the StructuredText fragment as a manipulable object,
+and null of the fragment is of the wrong type, or if it doesn&#039;t exist.</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$field </td>
+                                <td><p>name of the fragment, with the document's type, like "product.description"</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/Prismic.Fragment.StructuredText.html">\Prismic\Fragment\StructuredText</a>
+                                            &mdash; <p>the directly usable object, or null if the fragment is of the wrong type or unset</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            api
+                        </th>
+                        <td>
+                                                                                            
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getLink" name="method_getLink" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getLink()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getLink(string  <span class="argument">$field</span>) : \Prismic\Fragment\Link\LinkInterface</pre>
+                <p><em>Returns the Link fragment as a manipulable object,
+and null of the fragment is of the wrong type, or if it doesn&#039;t exist.</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$field </td>
+                                <td><p>name of the fragment, with the document's type, like "product.gallery"</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/Prismic.Fragment.Link.LinkInterface.html">\Prismic\Fragment\Link\LinkInterface</a>
+                                            &mdash; <p>the directly usable object, or null if the fragment is of the wrong type or unset</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            api
+                        </th>
+                        <td>
+                                                                                            
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getGroup" name="method_getGroup" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getGroup()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getGroup(string  <span class="argument">$field</span>) : \Prismic\Fragment\Group</pre>
+                <p><em>Returns the Group fragment as a manipulable object,
+and null of the fragment is of the wrong type, or if it doesn&#039;t exist.</em></p>
+                <p>This is the point of entry to then loop or search through the elements inside the Group fragment.</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$field </td>
+                                <td><p>name of the fragment, with the document's type, like "product.gallery"</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/Prismic.Fragment.Group.html">\Prismic\Fragment\Group</a>
+                                            &mdash; <p>the directly usable object, or null if the fragment is of the wrong type or unset</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            api
+                        </th>
+                        <td>
+                                                                                            
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_asHtml" name="method_asHtml" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">asHtml()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">asHtml(\Prismic\LinkResolver  <span class="argument">$linkResolver = null</span>) : string</pre>
+                <p><em>Returns an HTML serialization for the whole document at once, by serializing all fragments in order.</em></p>
+                <p>This is a basic serialization, if you want to template your document better, you will need to serialize
+at the fragment level; for instance: $doc->get('product.description')->asHtml($linkResolver);</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td><a href="../classes/Prismic.LinkResolver.html">\Prismic\LinkResolver</a></td>
+                                <td>$linkResolver </td>
+                                <td><p>an extension of the Prismic\LinkResolver class that you taught how to turn a prismic.io document in to a URL in your application</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    string
+                                            &mdash; <p>the directly usable HTML code</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            api
+                        </th>
+                        <td>
+                                                                                            
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getId" name="method_getId" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getId()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getId() : string</pre>
+                <p><em>Returns the ID of the document</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    string
+                                            &mdash; <p>the ID of the document</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            api
+                        </th>
+                        <td>
+                                                                                            
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getType" name="method_getType" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getType()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getType() : string</pre>
+                <p><em>Returns the type of the document</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    string
+                                            &mdash; <p>the type of the document</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            api
+                        </th>
+                        <td>
+                                                                                            
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getHref" name="method_getHref" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getHref()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getHref() : string</pre>
+                <p><em>Returns the URL of the document in the repository&#039;s API</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    string
+                                            &mdash; <p>the URL of the document in the repository's API</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            api
+                        </th>
+                        <td>
+                                                                                            
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getTags" name="method_getTags" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getTags()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getTags() : array</pre>
+                <p><em>Returns the tags in the document</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    array
+                                            &mdash; <p>the tags in the document</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            api
+                        </th>
+                        <td>
+                                                                                            
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getSlugs" name="method_getSlugs" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getSlugs()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getSlugs() : array</pre>
+                <p><em>Returns the slugs used in the document, in the past and today; today&#039;s slug is the head.</em></p>
+                <p>Your can use getSlug() if you need just the current slug.</p>
+
+                
+                
+                                    <h4>Returns</h4>
+                    array
+                                            &mdash; <p>the slugs used in the document, in the past and today; today's slug is the head</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            api
+                        </th>
+                        <td>
+                                                                                            
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getFragments" name="method_getFragments" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getFragments()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getFragments() : array</pre>
+                <p><em>Returns the list of fragments of the document. You shouldn&#039;t have a reason to use this,
+as you can access fragments with get functions.</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    array
+                                            &mdash; <p>the list of fragments in the document.</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_parseFragment" name="method_parseFragment" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">parseFragment()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">parseFragment(\stdClass  <span class="argument">$json</span>) : \Prismic\Fragment\FragmentInterface</pre>
+                <p><em>Parses a given fragment. Not meant to be used except for testing.</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>\stdClass</td>
+                                <td>$json </td>
+                                <td><p>the json bit retrieved from the API that represents any fragment.</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/Prismic.Fragment.FragmentInterface.html">\Prismic\Fragment\FragmentInterface</a>
+                                            &mdash; <p>the manipulable object for that fragment.</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                            <span class="label label-info">static</span>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_parse" name="method_parse" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">parse()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">parse(\stdClass  <span class="argument">$json</span>) : \Prismic\Document</pre>
+                <p><em>Parses a given document. Not meant to be used except for testing.</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>\stdClass</td>
+                                <td>$json </td>
+                                <td><p>the json bit retrieved from the API that represents a document.</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/Prismic.Document.html">\Prismic\Document</a>
+                                            &mdash; <p>the manipulable object for that document.</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                            <span class="label label-info">static</span>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                                                    </div>
+    </section>
+
+    <div id="source-view" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="source-view-label" aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="source-view-label">Document.php</h3>
+        </div>
+        <div class="modal-body">
+            <pre data-src="../files/Document.php.txt" class="language-php line-numbers"></pre>
+        </div>
+    </div>
+
+    <footer class="row-fluid">
+        <section class="span10 offset2">
+            <section class="row-fluid">
+                <section class="span10 offset1">
+                    <section class="row-fluid footer-sections">
+                        <section class="span4">
+                                                        <h1><i class="icon-code"></i></h1>
+                            <div>
+                                <ul>
+                                                                            <li><a href="../namespaces/Prismic.html">\Prismic</a></li>
+                                                                    </ul>
+                            </div>
+                        </section>
+                        <section class="span4">
+                                                        <h1><i class="icon-bar-chart"></i></h1>
+                            <div>
+                                <ul>
+                                    <li><a href="../graphs/class.html">Class Hierarchy Diagram</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                        <section class="span4">
+                                                        <h1><i class="icon-pushpin"></i></h1>
+                            <div>
+                                <ul>
+                                    <li><a href="../reports/errors.html">Errors</a></li>
+                                    <li><a href="../reports/markers.html">Markers</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                    </section>
+                </section>
+            </section>
+            <section class="row-fluid">
+                <section class="span10 offset1">
+                    <hr />
+                    Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
+                    on 
+Warning: date_default_timezone_get(): It is not safe to rely on the system's timezone settings. You are *required* to use the date.timezone setting or the date_default_timezone_set() function. In case you used any of those methods and you are still getting this warning, you most likely misspelled the timezone identifier. We selected the timezone 'UTC' for now, but please set date.timezone to select your timezone. in /Volumes/Devdisk/Prismic/php-kit/vendor/twig/twig/lib/Twig/Extension/Core.php on line 89
+September 24th, 2014 at 13:22.
+                </section>
+            </section>
+        </section>
+    </footer>
+</div>
+
+</body>
+</html>
